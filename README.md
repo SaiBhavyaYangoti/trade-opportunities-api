@@ -93,7 +93,7 @@ Response:
 ```
 
 
-### 2. `GET /analyze/{sector}` — Get trade opportunity report ⭐ Main Endpoint
+### 2. `GET /analyze/{sector}` — Get trade opportunity report (Main Endpoint)
 
 Returns a structured markdown report with current trade opportunities for the given sector in India.
 ```bash
