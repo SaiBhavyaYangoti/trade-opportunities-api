@@ -1,6 +1,6 @@
 import logging
 from fastapi import FastAPI, Depends, HTTPException, Request
-from fastapi.responses import PlainTextResponse, JSONResponse, Response
+from fastapi.responses import JSONResponse, Response
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
