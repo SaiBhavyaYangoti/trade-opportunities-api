@@ -6,9 +6,9 @@ logger = logging.getLogger(__name__)
 
 def fetch_market_data(sector: str) -> str:
     queries = [
-        f"{sector} sector India trade opportunities 2024",
-        f"India {sector} export import market trends",
-        f"{sector} industry India growth challenges",
+        f"{sector} sector India trade opportunities 2026",
+        f"India {sector} export import market trends 2026",
+        f"{sector} industry India growth challenges 2026",
     ]
 
     all_results = []

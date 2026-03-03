@@ -1,6 +1,6 @@
 import logging
 from fastapi import FastAPI, Depends, HTTPException, Request
-from fastapi.responses import PlainTextResponse, JSONResponse
+from fastapi.responses import JSONResponse, Response
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
@@ -74,7 +74,11 @@ async def analyze(
     raw_data = fetch_market_data(sector)
     report = analyze_sector(sector, raw_data)
 
-    return PlainTextResponse(content=report, media_type="text/markdown")
+    return Response(
+        content=report,
+        media_type="text/markdown",
+        headers={"Content-Disposition": f"attachment; filename={sector}_trade_report.md"}
+    )
 
 # Session info
 @app.get("/session", summary="Get current session usage")
