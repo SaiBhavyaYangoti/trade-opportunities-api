@@ -2,7 +2,6 @@
 
 A FastAPI service that analyzes market data and provides trade opportunity insights for specific sectors in India. The API accepts a sector name, searches for current market data, analyzes it using an LLM, and returns a structured markdown report.
 
----
 
 ## Tech Stack
 
@@ -13,7 +12,6 @@ A FastAPI service that analyzes market data and provides trade opportunity insig
 - **Rate Limiting**: SlowAPI (5 requests/minute per IP)
 - **Storage**: In-memory only (no database)
 
----
 
 ## Project Structure
 ```
@@ -32,7 +30,6 @@ trade_opportunities_api/
 └── README.md
 ```
 
----
 
 ## Setup Instructions
 
@@ -77,7 +74,6 @@ uvicorn app.main:app --reload
 
 Server will start at: **http://127.0.0.1:8000**
 
----
 
 ## API Endpoints
 
@@ -96,7 +92,6 @@ Response:
 }
 ```
 
----
 
 ### 2. `GET /analyze/{sector}` — Get trade opportunity report ⭐ Main Endpoint
 
@@ -128,7 +123,6 @@ curl -X GET "http://127.0.0.1:8000/analyze/pharmaceuticals" \
 - `429` — Rate limit exceeded (5 requests/minute)
 - `500` — Internal server error
 
----
 
 ### 3. `GET /session` — Get session usage info
 
@@ -147,7 +141,6 @@ Response:
 }
 ```
 
----
 
 ### 4. `GET /health` — Health check
 ```bash
@@ -162,7 +155,6 @@ Response:
 }
 ```
 
----
 
 ## Interactive API Documentation
 
@@ -178,7 +170,6 @@ Visit **http://127.0.0.1:8000/docs** for full Swagger UI where you can test all 
 - **Error Handling** — All errors return clean, structured responses
 - **Environment Variables** — API keys stored in `.env`, never hardcoded
 
----
 
 ## Core Workflow
 
@@ -189,7 +180,6 @@ Visit **http://127.0.0.1:8000/docs** for full Swagger UI where you can test all 
 5. Groq LLM (LLaMA 3.3 70B) analyzes the data and generates a report
 6. Structured markdown report is returned directly
 
----
 
 ## Quick Test Guide (Step by Step)
 
@@ -214,7 +204,6 @@ Visit **http://127.0.0.1:8000/docs** for full Swagger UI where you can test all 
 - Click **"Execute"**
 - Scroll down to see your markdown report in the response!
 
----
 
 ## Notes
 
