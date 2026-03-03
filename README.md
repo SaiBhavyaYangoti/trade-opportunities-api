@@ -188,6 +188,30 @@ Visit **http://127.0.0.1:8000/docs** for full Swagger UI where you can test all 
 5. Groq LLM (LLaMA 3.3 70B) analyzes the data and generates a report
 6. Structured markdown report is returned directly
 
+
+## Quick Test Guide (Step by Step)
+
+### Using Swagger UI at http://127.0.0.1:8000/docs
+
+**Step 1: Get your token**
+- Click on `POST /token`
+- Click **"Try it out"**
+- Enter any name in `client_id` field (minimum 3 characters, e.g. `testuser`)
+- Click **"Execute"**
+- Copy the `access_token` value from the response
+
+**Step 2: Authorize**
+- Click the **"Authorize"** button at the top right of the page
+- Paste your copied token in the **Value** field
+- Click **"Authorize"** then **"Close"**
+
+**Step 3: Get your market report**
+- Click on `GET /analyze/{sector}`
+- Click **"Try it out"**
+- Enter a sector name (e.g. `technology`, `agriculture`, `pharmaceuticals`)
+- Click **"Execute"**
+- Scroll down to see your markdown report in the response!
+
 ## Notes
 
 - Groq API (LLaMA 3.3 70B) was used as the LLM instead of Gemini due to free tier daily quota exhaustion during development. The assignment allows any model of choice.
