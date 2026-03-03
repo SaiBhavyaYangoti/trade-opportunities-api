@@ -30,7 +30,13 @@ trade_opportunities_api/
 
 ## Setup Instructions
 
-### Step 1: Make sure Python is installed
+### Step 1: Clone the repository
+```bash
+git clone https://github.com/SaiBhavyaYangoti/trade-opportunities-api.git
+cd trade-opportunities-api
+```
+
+### Step 2: Make sure Python is installed
 
 ```bash
 python --version
@@ -38,7 +44,7 @@ python --version
 
 Requires Python 3.10 or above.
 
-### Step 2: Create and activate virtual environment
+### Step 3: Create and activate virtual environment
 
 ```bash
 python -m venv venv
@@ -46,13 +52,13 @@ venv\Scripts\activate        # Windows
 source venv/bin/activate     # Mac/Linux
 ```
 
-### Step 3: Install all dependencies
+### Step 4: Install all dependencies
 
 ```bash
 pip install fastapi uvicorn groq ddgs python-jose passlib python-multipart slowapi python-dotenv
 ```
 
-### Step 4: Create a `.env` file in the root folder
+### Step 5: Create a `.env` file in the root folder
 
 Create a file named `.env` and add the following:
 
@@ -64,7 +70,7 @@ SECRET_KEY=any_long_random_string_here
 - Get a **free** Groq API key at: https://console.groq.com
 - `SECRET_KEY` can be any random string (e.g. `tradesecret$india2024xK9`)
 
-### Step 5: Run the server
+### Step 6: Run the server
 
 ```bash
 uvicorn app.main:app --reload
